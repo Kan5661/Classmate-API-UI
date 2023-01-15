@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react'
+import GameCards from './GameInfoCard.jsx'
+import Nav from './Nav.jsx';
+
 
 function App() {
+  const [games, setGames] = useState([])
+
+  function fetchGames() {
+    fetch('https://free-to-play-gaming-api-production.up.railway.app/')
+    .then(res => res.json())
+    .then(data => setGames(data))
+  }
+
+  useEffect(() => fetchGames(), [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Nav />
+      <GameCards />
     </div>
   );
 }
