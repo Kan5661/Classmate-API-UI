@@ -13,6 +13,7 @@ function GameDetail(prop) {
                 </div>
                 <div className='gameInfo'>
                     <div> <span className='gameProperties'>Title:</span> {prop.gameDetail.title}</div>
+                    <div> <span className='gameProperties'>Genre:</span> {prop.gameDetail.genre}</div>
                     <div> <span className='gameProperties'>Platform</span>{prop.gameDetail.platform}</div>
                     <div> <span className='gameProperties'>Developer:</span>{prop.gameDetail.developer}</div>
                     <a href={prop.gameDetail.game_url}> {prop.gameDetail.game_url}</a>

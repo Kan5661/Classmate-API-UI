@@ -23,7 +23,7 @@ function Nav() {
             <div onClick={() => handleCreate()} className='createBtn'>Create</div>
             <h1>Free to Play Games</h1>
             <Menu menuActive={menuActive}/>
-            <CreateGame createActive={createActive} />
+            <CreateGame createActive={createActive}  setCreateActive={setCreateActive}/>
         </div>
         
     )
