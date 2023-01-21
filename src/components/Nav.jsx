@@ -2,15 +2,13 @@ import Menu from "./Menu.jsx"
 import CreateGame from './CreateModal.jsx'
 import { useState } from 'react'
 
-function Nav() {
+function Nav(prop) {
 
-    const [menuActive, setMenuActive] = useState(false)
-    const [createActive, setCreateActive] = useState(false)
     function handleMenu() {
-        menuActive? setMenuActive(false) : setMenuActive(true)
+        prop.menuActive? prop.setMenuActive(false) : prop.setMenuActive(true)
     }
     function handleCreate() {
-        createActive? setCreateActive(false) : setCreateActive(true)
+        prop.createActive? prop.setCreateActive(false) : prop.setCreateActive(true)
     }
 
     return(
@@ -22,8 +20,8 @@ function Nav() {
             </svg>
             <div onClick={() => handleCreate()} className='createBtn'>Create</div>
             <h1>Free to Play Games</h1>
-            <Menu menuActive={menuActive}/>
-            <CreateGame createActive={createActive}  setCreateActive={setCreateActive}/>
+            <Menu menuActive={prop.menuActive}/>
+            <CreateGame setRefresh={prop.setRefresh} createActive={prop.createActive}  setCreateActive={prop.setCreateActive}/>
         </div>
         
     )
