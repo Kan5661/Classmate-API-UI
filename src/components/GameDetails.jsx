@@ -10,6 +10,14 @@ function GameDetail(prop) {
         })
     }
 
+    function handleEdit() {
+        axios.put(`https://free-to-play-gaming-api-production.up.railway.app/${prop.gameDetail._id}`, prop.createGame)
+        .then(() => {
+            prop.setRefresh(prev => prev + 1)
+            prop.setShowGameDetail(false)
+        })
+    }
+
     return(
         <div className={prop.showGameDetail? 'GameDetail' : 'hideElement'}>
             <div className="info">

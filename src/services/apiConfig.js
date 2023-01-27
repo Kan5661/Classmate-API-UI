@@ -1,9 +1,7 @@
 import axios from "axios";
 
-let apiUrl = 'https://free-to-play-gaming-api-production.up.railway.app/'
-
 const api = axios.create({
-    baseUrl: apiUrl
-})
+  baseURL: 'https://free-to-play-gaming-api-production.up.railway.app/'
+});
 
-export default api
+export default api;
